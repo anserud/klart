@@ -22,6 +22,10 @@ public class AgentMessageTest {
 	private AgentMessage am;
 	
 	@Before 
+	/*
+	 * A setup class to initialize necessary 
+	 * parameters in order to run the tests.
+	 */
 	public void setupNetwork()
 	{
 		Event.resetCurrentID();
@@ -43,6 +47,11 @@ public class AgentMessageTest {
 	}
 	
 	@Test
+	/*
+	 * The following test was made to ensure
+	 * that a agent message could be created 
+	 * by passing in a node as its orgin.
+	 */
 	public void createAgentMessage()
 	{
 		this.am = new AgentMessage( node1 );
@@ -51,6 +60,11 @@ public class AgentMessageTest {
 	}
 	
 	@Test
+	/*
+	 * The following test was made to 
+	 * ensure that a agents messages time to live
+	 * was successfully decrement.
+	 */
 	public void decrementTTL()
 	{
 		this.am = new AgentMessage( node1 );
@@ -64,6 +78,12 @@ public class AgentMessageTest {
 	}
 	
 	@Test
+	/*
+	 * The following test was made to ensure that
+	 * a agent message could syncronize with nodes
+	 * by updating its own table and the node table it 
+	 * currently positioned at.
+	 */
 	public void syncronizeTableTest()
 	{
 		Route route;
